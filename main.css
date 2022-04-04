@@ -1,7 +1,7 @@
 * {
-    box-sizing: border-box;
+    /* box-sizing: border-box;
     margin: 0;
-    padding: 0;
+    padding: 0; */
   }
 
 body {
@@ -16,6 +16,12 @@ h1 {
     color: #064228;
     
 }
+.alert{
+    text-align: center;
+    font-size: 2em;
+    color: #064228;
+    
+}
 
 .illegal {
     font-size: 100px;
@@ -23,7 +29,8 @@ h1 {
 }
 
 .square {
-    
+    font-size: 4em;
+    color: #064228;
     background: #0EAD69;
   display: flex;
   justify-content: center;
@@ -35,6 +42,11 @@ h1 {
 
 .hidden {
     opacity: 0;
+    
+}
+
+.nodisplay{
+    display: none;
 }
 
 .blue {
@@ -46,7 +58,7 @@ h1 {
 }
 
 .gameboard{
-    margin: 50px;
+    /* margin: px; */
     padding: 50px;
     border-radius: 25px;
     /* height: 500px; */
@@ -64,12 +76,9 @@ h1 {
     grid-template-rows: repeat(3, 1fr);
     gap: 15px;
     margin-top: 50px;
+    transition: all 2s ease 0s;
 }
-.header{
-    display: flex;
-    flex-direction: column;
-    
-}
+
 .buttons{
     display: flex;
     justify-content: space-around;
@@ -83,6 +92,8 @@ h1 {
     background-color: #096B41;
     color: white;
     cursor: pointer;
+    position: absolute;
+  
 }
 .resetButton{
     width:15%;
@@ -96,3 +107,23 @@ h1 {
     color: white;
 }
     
+.highlight{
+    background-color: #12e38a;
+}
+.winner{
+    position: absolute;
+    height: 150px;
+    width: 600px;
+    color: white;
+    background: #096B41;
+    margin-left: auto;
+margin-right: auto;
+left: 0;
+right: 0;
+text-align: center;
+top:90px;
+text-align: center;
+font-size: 4em;
+padding: 25px 0 0 0;
+border-radius: 25px;
+}
