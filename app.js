@@ -2,7 +2,7 @@
 let squares = document.querySelectorAll('.square');
 // Places them all in an array
 squares = Array.from(squares);
-
+let numTurns = 0
 let currentPlayer = 'X'
 let start = document.querySelector('.startButton')
 let reset = document.querySelector('.resetButton')
@@ -67,8 +67,12 @@ squares.forEach(function(square){
     square.addEventListener('click', function(){
         if(win) return;
         if(square.innerHTML != '') return;
-        
         square.innerHTML = currentPlayer;
+        numTurns++;
+        if(numTurns >= squares.length){
+            winmsg.classList.remove('nodisplay')
+            winmsg.innerHTML = `It's a Draw!`
+        }
         checkForWinner();
         if(currentPlayer === 'X'){
             currentPlayer = 'O';
@@ -80,3 +84,4 @@ squares.forEach(function(square){
     })
 })
 
+console.log(numTurns)
