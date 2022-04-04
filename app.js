@@ -9,7 +9,12 @@ let reset = document.querySelector('.resetButton')
 let grid = document.querySelector('.gamegrid')
 let msg = document.querySelector('.alert')
 let winmsg = document.querySelector('.winner')
+let xSpan = document.querySelector('.xScore')
+let oSpan = document.querySelector('.oScore')
+let gamescore = document.querySelector('.scoreboard')
 msg.innerHTML = `It is X's turn`;
+let xScore = 0;
+let oScore = 0;
 //sets a win variable to false 
 let win = false;
 //starts the game of tictactoe
@@ -18,6 +23,8 @@ start.addEventListener('click', () => {
         grid.classList.remove('hidden');
         start.classList.add('nodisplay');
         msg.classList.remove('hidden');
+        gamescore.classList.remove('hidden');
+        square.classList.remove('nodisplay');
     })
 })
 //resets the game board
@@ -29,6 +36,7 @@ reset.addEventListener('click', () => {
         win = false;
         winmsg.classList.add('nodisplay')
         numTurns = 0;
+        currentPlayer = 'X'
     })
 })
 //an array of all possible winning combos
@@ -48,10 +56,18 @@ function checkForWinner(){
     winCombo.forEach(function(combo){
         let check = combo.every(index => squares[index].innerText == currentPlayer)
         if(check){
+            
             winmsg.classList.remove('nodisplay')
             winmsg.innerHTML = `${currentPlayer} is the winner!`
             winningSquares(combo);
             win = true;  
+            if(currentPlayer == 'X'){
+                xScore++;
+            xSpan.innerHTML = `X WINS: ${xScore}`
+            }else if(currentPlayer == 'O'){
+                oScore++;
+                oSpan.innerHTML = `O WINS: ${oScore}`
+            }
         }
     })
 }

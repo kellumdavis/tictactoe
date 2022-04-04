@@ -6,12 +6,21 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="./main.css">
     <link href="https://fonts.googleapis.com/css2?family=Oswald&family=Roboto&display=swap" rel="stylesheet">
+    <script
+    src="https://code.jquery.com/jquery-3.2.1.min.js"
+    integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="
+    crossorigin="anonymous"
+  ></script>
     <script src="./app.js" defer></script>
     <title>Tic-Tac-Toe</title>
 </head>
 <body>
-
+    
     <div class="gameboard">
+        <div class="scoreboard hidden">
+            <h2 class="score xScore ">X wins:</h2>
+        <h2 class="score oScore">O wins:</h2>
+        </div>
         <h1>Tic <span class="tac">Tac</span> Toe</h1>
         <p class="alert hidden"></p>
     <div class="buttons">
@@ -19,15 +28,15 @@
         <button class="resetButton">Reset</button>
     </div>
         <div class="hidden gamegrid">
-        <div class=" square"></div>
-        <div class=" square"></div>
-        <div class=" square"></div>
-        <div class=" square"></div>
-        <div class=" square"></div>
-        <div class=" square"></div>
-        <div class=" square"></div>
-        <div class=" square"></div>
-        <div class=" square"></div>
+        <div class="nodisplay square"></div>
+        <div class="nodisplay square"></div>
+        <div class="nodisplay square"></div>
+        <div class="nodisplay square"></div>
+        <div class="nodisplay square"></div>
+        <div class="nodisplay square"></div>
+        <div class="nodisplay square"></div>
+        <div class="nodisplay square"></div>
+        <div class="nodisplay square"></div>
         </div>
         <div class="winner nodisplay" ></div>
     </div>
