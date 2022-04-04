@@ -7,9 +7,9 @@ let currentPlayer = 'X'
 let start = document.querySelector('.startButton')
 let reset = document.querySelector('.resetButton')
 let grid = document.querySelector('.gamegrid')
-let alert = document.querySelector('.alert')
+let msg = document.querySelector('.alert')
 let winmsg = document.querySelector('.winner')
-alert.innerHTML = `It is X's turn`;
+msg.innerHTML = `It is X's turn`;
 //sets a win variable to false 
 let win = false;
 //starts the game of tictactoe
@@ -17,7 +17,7 @@ start.addEventListener('click', () => {
     squares.forEach(square => {
         grid.classList.remove('hidden');
         start.classList.add('nodisplay');
-        alert.classList.remove('hidden');
+        msg.classList.remove('hidden');
     })
 })
 //resets the game board
@@ -25,7 +25,7 @@ reset.addEventListener('click', () => {
     squares.forEach(square => {
         square.innerHTML = '';
         square.classList.remove('highlight')
-        alert.innerHTML = `It is X's turn`;
+        msg.innerHTML = `It is X's turn`;
         win = false;
         winmsg.classList.add('nodisplay')
         numTurns = 0;
@@ -74,14 +74,13 @@ squares.forEach(function(square){
             winmsg.classList.remove('nodisplay')
             winmsg.innerHTML = `It's a Draw!`
         }
-        
         checkForWinner();
         if(currentPlayer === 'X'){
             currentPlayer = 'O';
-            alert.innerHTML = `It is ${currentPlayer}'s turn`;
+            msg.innerHTML = `It is ${currentPlayer}'s turn`;
         }else if(currentPlayer === 'O'){
             currentPlayer = 'X';
-            alert.innerHTML = `It is ${currentPlayer}'s turn`;
+            msg.innerHTML = `It is ${currentPlayer}'s turn`;
         }
     })
 })
