@@ -28,6 +28,7 @@ reset.addEventListener('click', () => {
         alert.innerHTML = `It is X's turn`;
         win = false;
         winmsg.classList.add('nodisplay')
+        numTurns = 0;
     })
 })
 //an array of all possible winning combos
@@ -73,6 +74,7 @@ squares.forEach(function(square){
             winmsg.classList.remove('nodisplay')
             winmsg.innerHTML = `It's a Draw!`
         }
+        
         checkForWinner();
         if(currentPlayer === 'X'){
             currentPlayer = 'O';
