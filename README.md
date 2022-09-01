@@ -1,4 +1,5 @@
-![General Assembly Logo](http://i.imgur.com/ke8USTq.png)
+![image](https://user-images.githubusercontent.com/21118840/188018206-761cad8c-3302-4476-987b-2e166954a380.png)
+
 
 # Tic Tac Toe
 
